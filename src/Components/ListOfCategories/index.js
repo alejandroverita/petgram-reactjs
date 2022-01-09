@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {List, Item} from './styles';
 
 import { Category } from '../Category';
-import db from '../../../api/db.json';
 
 export const ListOfCategories = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(function(){
+        window.fetch('https://petgram-server-alejandroverita-alejandroverita.vercel.app/categories')
+            .then(res => res.json())
+            .then(data => {
+                setCategories(data)
+        })
+    }, [])
+
+    
     return (
         <List>
             {
-                db.categories.map(category => 
+                categories.map(category => 
                     <Item key = {category.id}>
                         <Category {...category} />
                     </Item>
