@@ -4,6 +4,7 @@ export const List = styled.ul`
     display: flex;
     overflow: scroll;
     width: 100%;
+    //desaparece el scroll sin perder la funcionalidad 
     &::-webkit-scrollbar {
         display: none;
     }
