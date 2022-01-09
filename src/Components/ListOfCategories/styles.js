@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {scale} from '../../Styles/animation';
 
 export const List = styled.ul`
@@ -9,7 +9,8 @@ export const List = styled.ul`
     &::-webkit-scrollbar {
         display: none;
     };
-    &.fixed {
+
+    ${props => props.fixed && css `
         background-color: white;
         border-radius: 60px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -23,9 +24,9 @@ export const List = styled.ul`
         transform: scale(0.5);
         ${scale({time:'0.3s'})}
         z-index: 1;
-    }
 
-  `
+    `}
+`
 
 export const Item = styled.li` 
     padding: 0 8px;

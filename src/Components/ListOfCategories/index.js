@@ -2,21 +2,32 @@ import React, {useState, useEffect} from 'react';
 
 import {List, Item} from './styles';
 
+import {Loading} from '../Loading';
 import { Category } from '../Category';
 
-export const ListOfCategories = () => {
+function useCategoriesData() {
     const [categories, setCategories] = useState([]);
-
-    const [showFixed, setShowFixed] = useState(false);
-
+    
+    const [loading, setLoading] = useState(false);
+    
     //Show Categories fetching the data
     useEffect(function(){
+        setLoading(true)
         window.fetch('https://petgram-server-alejandroverita-alejandroverita.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
-                setCategories(data)
+                setCategories(data);
+                setLoading(false);
         })
     }, [])
+
+    return { categories, loading }
+}
+
+export const ListOfCategories = () => {
+    const {categories, loading } = useCategoriesData();
+    
+    const [showFixed, setShowFixed] = useState(false);
 
     //Show categories when scroll is higher 200px
     useEffect(()=>{
@@ -32,8 +43,14 @@ export const ListOfCategories = () => {
     }, [showFixed])
 
     const renderList = (fixed) => (
-        <List className={fixed ? 'fixed' : ''}>
+        <List fixed={fixed}>
             {
+                loading 
+                ? 
+                <Item key = 'loading'>
+                    <Loading />
+                </Item>
+                : 
                 categories.map(category => 
                     <Item key = {category.id}>
                         <Category {...category} />
@@ -42,9 +59,11 @@ export const ListOfCategories = () => {
             }
         </List>
     )
+
     
     return (
         <>
+           
             {renderList()}
             {showFixed && renderList(true)}
         </>
