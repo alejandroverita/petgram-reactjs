@@ -1,23 +1,30 @@
 import React from 'react';
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
+/* COMPONENTS */
 import { PhotoCard } from '../PhotoCard';
 
-const whitPhotos = gql`
-  query getPhotos {
-    photos {
-      id
-      categoryId
-      src
-      likes
-      userId
-      liked
-    }
-  }
-`;
+/* HOC */
+import { withPhotos } from '../../HOC/withPhotos';
 
-export const ListOfPhotoCards = () => {
-    const { loading, error, data } = useQuery(whitPhotos);
+// const getPhotos = gql`
+// query getPhotos($categoryId: ID) {
+//   photos(categoryId: $categoryId) {
+//     id
+//     categoryId
+//     src
+//     likes
+//     userId
+//     liked
+//   }
+// }
+// `;
+
+export const ListOfPhotoCards = ({ categoryId }) => {
+    const { loading, error, data } = useQuery(withPhotos, {
+        variables: { categoryId }
+    });
 
     if (error) {
         return <h2>Internal Server Error</h2>;
