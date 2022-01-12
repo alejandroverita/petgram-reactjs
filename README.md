@@ -40,3 +40,7 @@ Configuraremos nuestro `index.js` para inicializar nuestro cliente de Apollo con
             ApolloProvider>,
             document.getElementById('app')
     )
+
+### useMutation
+
+El componente de mutation es otro componente importante en una aplicación Apollo. Es un componente React que proporciona una función para ejecutar una mutation de GraphQL para así alterar la data. Además, rastrea el estado de carga, finalización y error de esa mutación.
