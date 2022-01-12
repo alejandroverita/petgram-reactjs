@@ -7,11 +7,27 @@ import { ListOfCategories } from './Components/ListOfCategories';
 import { ListOfPhotoCards } from './Components/ListOfPhotoCards';
 import { Logo } from './Components/Logo';
 
-export const App = () => (
-    <>
-        <GlobalStyle />
-        <Logo />
-        <ListOfCategories />
-        <ListOfPhotoCards categoryId={1}/>
-    </>
-)
+import {PhotoCardWithQuery} from './Container/PhotoCardWithQuery'
+
+export const App = () =>{
+    const  urlParams = new window.URLSearchParams(window.location.search)
+    const detailId = urlParams.get('detail')
+    // console.log(detailId)
+    return (
+        <>
+            <GlobalStyle />
+            <Logo />
+            {
+                detailId
+                ?
+                    <PhotoCardWithQuery id={detailId} />
+                :
+                <> 
+                    <ListOfCategories />
+                    <ListOfPhotoCards categoryId={1}/>
+                </>
+            }
+        </>
+
+    )
+} 
