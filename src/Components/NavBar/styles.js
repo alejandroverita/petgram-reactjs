@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
+import { NavLink as LinkRouter } from "react-router-dom";
+import { fadeIn } from '../../Styles/animation'
 
 export const Nav = styled.nav` 
     display: flex;
@@ -27,4 +28,20 @@ export const Link = styled(LinkRouter)`
   height: 100%;
   width: 100%;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &[aria-current]{
+
+    color: black;
+
+    &:after{ /*Elemento justo despues*/
+        ${fadeIn({time: '0.5s'})}
+        content: '.';
+        position: absolute;
+        bottom: 10px;
+        font-size: 34px;
+        line-height: 20px;
+        }
+
+    }
 `
