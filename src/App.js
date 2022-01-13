@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 //styles
 import { GlobalStyle } from "./Styles/GlobalStyles";
 // import { Routes } from './Routes'
-import { Logo } from './Components/Logo';
 import { Home } from './Pages/Home';
-import { PhotoCardWithQuery } from "./Container/PhotoCardWithQuery";
+import { Detail } from "./Pages/Detail";
+
+import { Logo } from './Components/Logo';
 
 
 export const App = () =>{
@@ -19,7 +20,7 @@ export const App = () =>{
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/pet/:id' element={<Home />} />
-            <Route path='/detail/:id' element={<PhotoCardWithQuery />} />
+            <Route path='/detail/:id' element={<Detail />} />
         </Routes>
         </BrowserRouter>
     )

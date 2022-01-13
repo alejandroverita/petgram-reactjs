@@ -1,10 +1,11 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Svg } from './styles';
+import { StyledLink } from "../Category/styles";
 
 export const Logo = (props) => {
   return ( 
-    <Link to="/">
+    <StyledLink to="/">
       <Svg
         width={358.935}
         height={113.496}
@@ -52,7 +53,7 @@ export const Logo = (props) => {
           />
         </g>
       </Svg>
-    </Link>
+    </StyledLink>
   )
 }
 
