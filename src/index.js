@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
+import {AppProvider}  from './Context/AppContext';
+
 import {App} from './App';
 
 const client = new ApolloClient({
@@ -10,8 +12,10 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
-        <App />
-    </ApolloProvider>, 
+    <AppProvider>
+        <ApolloProvider client={client}>
+            <App />
+        </ApolloProvider>
+    </AppProvider>,
     document.getElementById('app')
 )
