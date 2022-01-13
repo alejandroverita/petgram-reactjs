@@ -1,12 +1,14 @@
 import React from 'react';
 import { useQuery } from "@apollo/client";
-import { gql } from "@apollo/client";
+import {useParams } from 'react-router';
 
 /* COMPONENTS */
 import { PhotoCard } from '../PhotoCard';
 
 /* HOC */
 import { withPhotos } from '../../HOC/withPhotos';
+
+import { ListOfPhotoCardsContainer } from '../../Container/ListOfPhotoCardsContainer';
 
 // const getPhotos = gql`
 // query getPhotos($categoryId: ID) {
@@ -21,10 +23,11 @@ import { withPhotos } from '../../HOC/withPhotos';
 // }
 // `;
 
-export const ListOfPhotoCards = ({ categoryId }) => {
-    const { loading, error, data } = useQuery(withPhotos, {
-        variables: { categoryId }
-    });
+export const ListOfPhotoCards = () => {
+    const {id} = useParams();
+    const categoryId = id
+    
+    const { loading, error, data } = ListOfPhotoCardsContainer({categoryId})
 
     if (error) {
         return <h2>Internal Server Error</h2>;

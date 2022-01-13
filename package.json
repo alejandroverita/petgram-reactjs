@@ -8,7 +8,7 @@
     "build": "webpack server --mode production",
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "dev": "webpack server --mode development",
+    "dev": "webpack server --mode development --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

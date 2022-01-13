@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom'
 
 import {List, Item} from './styles';
 
@@ -53,7 +54,7 @@ export const ListOfCategories = () => {
                 : 
                 categories.map(category => 
                     <Item key = {category.id}>
-                        <Category {...category} />
+                        <Category {...category} path={`/pet/${category.id}`}/>
                     </Item>
                 )
             }

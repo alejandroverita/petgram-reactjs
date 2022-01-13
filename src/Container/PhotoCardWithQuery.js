@@ -2,7 +2,7 @@ import React from 'react';
 import { PhotoCard } from '../Components/PhotoCard'
 import { useGetSinglePhoto } from '../Hooks/useGetPhoto'
 
-
+import { useParams } from 'react-router-dom'
 
 export const PhotoCardWithQuery = ({ id }) => {
   const { loading, data, error } = useGetSinglePhoto(id)
