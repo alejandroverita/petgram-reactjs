@@ -7,6 +7,7 @@ import { Home } from './Pages/Home';
 import { Detail } from "./Pages/Detail";
 
 import { Logo } from './Components/Logo';
+import { NavBar } from './Components/NavBar';
 
 
 export const App = () =>{
@@ -22,6 +23,7 @@ export const App = () =>{
             <Route path='/pet/:id' element={<Home />} />
             <Route path='/detail/:id' element={<Detail />} />
         </Routes>
+        <NavBar />
         </BrowserRouter>
     )
 } 
