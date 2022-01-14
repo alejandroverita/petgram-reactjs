@@ -24,6 +24,7 @@ export const Button = styled.button`
 `
 
 export const Title = styled.h2`
+  color: #8d00ff;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
