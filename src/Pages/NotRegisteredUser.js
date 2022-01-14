@@ -5,6 +5,9 @@ import { UserForm } from '../Components/UserForm';
 export const NotRegisteredUser = () => {
     const { activateAuth } = useContext(AppContext)
   return (
-    <UserForm onSubmit={activateAuth}/>
+    <>
+    <UserForm title='Registrarse' onSubmit={activateAuth}/>
+    <UserForm title='Iniciar Sesion' onSubmit={activateAuth}/>
+    </>
   )
 }
