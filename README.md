@@ -55,3 +55,11 @@ Header: Es un objeto que define qué algoritmo y tipo tiene el token.
 Payload: La información que almacenamos en el token.
 Verify Signature: Una encriptación del header más el payload más tu llave secreta.
 Para utilizar nuestro JWT necesitamos añadirlo al header authorization de las peticiones HTTP que hagamos con el texto Bearer [token].
+
+### Base code completed
+
+![homepage.png](https://static.platzi.com/media/user_upload/homepage-4e116786-7714-47dd-af4c-9c8023adbc03.jpg)
+
+![favs.png](https://static.platzi.com/media/user_upload/favs-47b866f1-5f83-4b7c-9833-8e1c4fa8d982.jpg)
+
+![exit.png](https://static.platzi.com/media/user_upload/exit-7be8c0d2-777b-4bee-a9bf-0698c02cbf1e.jpg)
