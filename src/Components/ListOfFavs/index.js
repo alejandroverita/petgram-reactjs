@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Link, Container, Image } from './styles'
 
@@ -13,5 +14,15 @@ export const ListOfFavs = ({favs = []}) => {
                 ))}
             </Container>
         </>
+    )
+}
+
+ListOfFavs.propTypes = {
+    favs: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            src: PropTypes.string.isRequired
+        })
+
     )
 }
