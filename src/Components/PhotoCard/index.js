@@ -15,20 +15,6 @@ const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1
 export const PhotoCard = ({id, liked, likes=0, src = DEFAULT_IMAGE})=> {
     
     const [show, ref] = useNearScreen();
-    
-    
-    // const { mutation, mutationLoading, mutationError } = useMutationToogleLike()
-    
-    // const handleFavClick = () => {
-    //     !liked && mutation({
-    //       variables: {
-    //         input: { id }
-    //       }
-    //     })
-    //     setLiked(!liked)
-    //   }
-    //   console.log('{ mutation, mutationLoading, mutationError }', { mutation, mutationLoading, mutationError })
-
 
     return(
         <Article ref={ref}>

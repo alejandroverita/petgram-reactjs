@@ -5,12 +5,17 @@ import { ListOfPhotoCards } from '../Components/ListOfPhotoCards';
 
 import { Layout } from '../Components/Layout'
 
-export const Home = () => {
+const HomePage = ({children}) => {
   
   return (
       <Layout>
         <ListOfCategories />  
         <ListOfPhotoCards />
+        {children}
       </Layout>
   )
 }
+
+export const Home = React.memo(HomePage, (prevProps, props) => {
+  return prevProps.id === props.id
+});

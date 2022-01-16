@@ -1,27 +1,13 @@
 import React from 'react';
-import { useQuery } from "@apollo/client";
 import {useParams } from 'react-router';
 
 /* COMPONENTS */
 import { PhotoCard } from '../PhotoCard';
 
 /* HOC */
-import { withPhotos } from '../../HOC/withPhotos';
+// import { withPhotos } from '../../HOC/withPhotos';
 
 import { ListOfPhotoCardsContainer } from '../../Container/ListOfPhotoCardsContainer';
-
-// const getPhotos = gql`
-// query getPhotos($categoryId: ID) {
-//   photos(categoryId: $categoryId) {
-//     id
-//     categoryId
-//     src
-//     likes
-//     userId
-//     liked
-//   }
-// }
-// `;
 
 export const ListOfPhotoCards = () => {
     const {id} = useParams();
