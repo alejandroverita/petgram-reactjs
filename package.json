@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "vercel-build": "npm run build --output public",
-    "build": "webpack server --mode production",
+    "build": "webpack --mode production",
     "lint": "standard",
     "lint-fix": "standard --fix",
     "dev": "webpack server --mode development --history-api-fallback",
