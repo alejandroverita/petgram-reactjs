@@ -4,25 +4,27 @@
   "description": "**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev",
   "main": "index.js",
   "scripts": {
-    "vercel-build": "npm run build",
+    "vercel-build": "npm run build --output public",
     "build": "webpack server --mode production",
     "lint": "standard",
     "lint-fix": "standard --fix",
     "dev": "webpack server --mode development --history-api-fallback",
     "serve:dev": "webpack --mode development && npx serve dist -s",
-    "test": "cypress open"
+    "test": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/midudev/curso-platzi-react-avanzado.git"
+    "url": "git+https://github.com/alejandroverita/petgram-reactjs.git"
   },
   "keywords": [],
   "author": "Alejandro Vera <alejandroverah97@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
+    "url": "https://github.com/alejandroverita/petgram-reactjs/issues"
   },
-  "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
+  "homepage": "https://alejandroverita.github.io/petgram-reactjs",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
@@ -31,6 +33,7 @@
     "cypress": "^9.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.5.1",
     "standard": "^16.0.4",

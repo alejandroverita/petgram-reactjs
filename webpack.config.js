@@ -35,7 +35,7 @@ module.exports = {
       ]
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      // maximumFileSizeToCacheInBytes: 5000000,
+      maximumFileSizeToCacheInBytes: 5000000,
       runtimeCaching: [
         {
           urlPattern: new RegExp('https://(res.cloudinary.com|images.unsplash.com)'),
@@ -76,5 +76,10 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
     
+  },
+  performance: {
+ 
+    hints:false   
+     
   }
 }
